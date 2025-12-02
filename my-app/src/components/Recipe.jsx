@@ -6,7 +6,7 @@ export default function Recipe()
     const [recipename,setRecipeName]=useState("");
     const [ingredients,setIngredients]=useState("");
      const [instructions,setInstruction]=useState("");
-     const [recipes,setRecipes]=useState("");
+     const [recipes,setRecipes]=useState([]);
 
 
      // Save REcipe to localstorage
