@@ -33,7 +33,7 @@ export default function Recipe() {
 
         if (editingId) {
             const updatedRecipes = recipes.map((r) =>
-                r.id === editingId ? { ...r, name: recipename, ingredients, ingredients } : r
+                r.id === editingId ? { ...r, name: recipename, ingredients, instructions }:r
             )
             saveRecipes(updatedRecipes);
             setEditingId(null);
@@ -65,7 +65,7 @@ export default function Recipe() {
         setRecipeName(r.name);
         setIngredients(r.ingredients);
         setInstruction(r.instructions);
-        setEditingId(r.id);
+        setEditingId(r.id)
     }
 
     return (
@@ -89,7 +89,7 @@ export default function Recipe() {
                     </div>
 
                     <button style={{ padding: "5px 10px " }} type="submit">
-                        {editingId ?}"Update Recipe": "Add Recipe"</button>
+                        {editingId ?"Update Recipe": "Add Recipe"}</button>
                 </form>
             </div>
             <div style={{ maxWidth: "600px", margin: "20px auto", border: "1px solid #ccc", padding: "30px" }}>
@@ -101,7 +101,7 @@ export default function Recipe() {
                         <p><strong>Ingredients:</strong></p>
                         <ul>{r.ingredients}</ul>
                         <p><strong>Instructions:{r.instructions}</strong></p>
-                        <button style={{ padding: "3px 8px ", marginRight: "5px" }} onClick={() => handleEdit(r)}>Edit</button>
+                        <button style={{ padding: "3px 8px ", marginRight: "5px" }} onClick={()=>handleEdit(r)}>Edit</button>
                         <button style={{ padding: "3px 8px " }} onClick={() => handleDelete(r.id)}>Delete</button>
                     </div>
                 ))}
